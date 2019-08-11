@@ -1,0 +1,663 @@
+<div class="row session-main grayBack" id="cinemablock">
+  <div class="col-md-12 block mainMaxWidth" id="homeCinemaComplex">
+    <ul class="nav nav-tabs listPCinemas accordion" id="parentListPCinemas" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="bhd-tab" data-toggle="tab" href="#bhd" role="tab" aria-controls="bhd"
+          aria-selected="true" (click)="showHide()">
+          <img src="../../../assets/img/bhd.png" alt="error">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="galaxy-tab" data-toggle="tab" href="#galaxy" role="tab" aria-controls="galaxy"
+          aria-selected="false" (click)="showHide()">
+          <img src="../../../assets/img/galaxycine.png" alt="error">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="lotte-tab" data-toggle="tab" href="#lotte" role="tab" aria-controls="lotte"
+          aria-selected="false">
+          <img src="../../../assets/img/404b8c4b80d77732e7426cdb7e24be20.png" alt="error">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="cinestar-tab" data-toggle="tab" href="#cinestar" role="tab" aria-controls="cinestar"
+          aria-selected="false">
+          <img src="../../../assets/img/cinestar.png" alt="error">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ddc-tab" data-toggle="tab" href="#ddc" role="tab" aria-controls="ddc" aria-selected="false">
+          <img src="../../../assets/img/9b240f96a233bb43203ee514a21a6004.png" alt="error">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="megaGS-tab" data-toggle="tab" href="#megaGS" role="tab" aria-controls="megaGS"
+          aria-selected="false">
+          <img src="../../../assets/img/7b078639bd8fdb09dd83652d207c7b90.png" alt="error">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="cgv-tab" data-toggle="tab" href="#cgv" role="tab" aria-controls="cgv" aria-selected="false">
+          <img src="../../../assets/img/ee621ee05dcd4565caead4f29421b41e.png" alt="error">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="cinemaOther-tab" data-toggle="tab" href="#ciemaOther" role="tab" aria-controls="cinemaOther"
+          aria-selected="false">
+          <img src="../../../assets/img/05db7612f4a6f0ee3db35b63528f3473.png" alt="error">
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content float-left" id="listCinemas" style="height: 717.85px;">
+      <div class="fade show active" id="bhd" role="tabpanel" aria-labelledby="bhd-tab">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" *ngIf="!show">
+          <a class="nav-link cinema active" id="v-pills-phamHung-tab" data-toggle="pill" href="#v-pills-phamHung" role="tab"
+            aria-controls="v-pills-phamHung" aria-selected="true">
+            <img class="cinemaImage" src="../../../assets/img/bhd-star-pham-hung-15379533093101.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema BHD Star Cineplex">BHD Star Cineplex</span>
+                - Phạm Hùng
+              </span>
+              <span class="infoMovieCinema">L4-Satra Phạm Hùng, C6/27 Phạm Hùng, Bình Chánh</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-LVKiet-tab" data-toggle="pill" href="#v-pills-LVKiet" role="tab"
+            aria-controls="v-pills-LVKiet" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/bhd-star-vincom-le-van-viet-15379553262189.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema BHD Star Cineplex">BHD Star Cineplex</span>
+                - Vincom Lê Văn Việt
+              </span>
+              <span class="infoMovieCinema">L4-Vincom Plaza, 50 Lê Văn Việt, Q.9</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="galaxy" role="tabpanel" aria-labelledby="galaxy-tab">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link cinema active" id="v-pills-PVChi-tab" data-toggle="pill" href="#v-pills-PVChi" role="tab"
+            aria-controls="v-pills-PVChi" aria-selected="true">
+            <img class="cinemaImage" src="../../../assets/img/galaxy-pham-van-chi-15381059548289.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema GLX">GLX</span>
+                - Phạm Văn Chí
+              </span>
+              <span class="infoMovieCinema">Lầu 5, TTTM Platinum Plaza, 634 Phạm Văn Chí, Q.6</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-NDU-tab" data-toggle="pill" href="#v-pills-NDU" role="tab"
+            aria-controls="v-pills-NDU" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/galaxy-nguyen-du-15379626329832.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema GLX">GLX</span>
+                - Nguyễn Du
+              </span>
+              <span class="infoMovieCinema">116 Nguyễn Du, Q.1</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-KDVuong-tab" data-toggle="pill" href="#v-pills-KDVuong" role="tab"
+            aria-controls="v-pills-KDVuong" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/galaxy-kinh-duong-vuong-15381065563489.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema GLX">GLX</span>
+                - Kinh Dương Vương
+              </span>
+              <span class="infoMovieCinema">718bis Kinh Dương Vương, Q.6</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-QTrug-tab" data-toggle="pill" href="#v-pills-QTrug" role="tab"
+            aria-controls="v-pills-QTrug" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/galaxy-quang-trung-15381040745219.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema GLX">GLX</span>
+                - Quang Trung
+              </span>
+              <span class="infoMovieCinema">L3-Co.opmart Foodcosa, 304A Quang Trung, Gò Vấp</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-TChanh-tab" data-toggle="pill" href="#v-pills-TChanh" role="tab"
+            aria-controls="v-pills-TChanh" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/galaxy-trung-chanh-15381048160387.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema GLX">GLX</span>
+                - Trung Chánh
+              </span>
+              <span class="infoMovieCinema">TTVH Q12 – 09, Q L 22, Trung Mỹ Tây , Q.12</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-QTPhat-tab" data-toggle="pill" href="#v-pills-HTPhat" role="tab"
+            aria-controls="v-pills-HTPhat" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/galaxy-huynh-tan-phat-15381070102598.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema GLX">GLX</span>
+                - Huỳnh Tấn Phát
+              </span>
+              <span class="infoMovieCinema">1362 Huỳnh Tấn Phát, KP1, Phú Mỹ, Q. 7</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-NVQua-tab" data-toggle="pill" href="#v-pills-NVQua" role="tab"
+            aria-controls="v-pills-NVQua" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/galaxy-nguyen-van-qua-15381052937743.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema GLX">GLX</span>
+                - Nguyễn Văn Qúa
+              </span>
+              <span class="infoMovieCinema">119B Nguyễn Văn Quá, Đông Hưng Thuận, Q.12, TPHCM</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="lotte" role="tabpanel" aria-labelledby="lotte-tab">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link cinema active" id="v-pills-NSGon-tab" data-toggle="pill" href="#v-pills-NSGon" role="tab"
+            aria-controls="v-pills-NSGon" aria-selected="true">
+            <img class="cinemaImage" src="../../../assets/img/lotte-cinema-nam-sai-gon-15383867312967.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema LOTTE">LOTTE</span>
+                - Nam Sai Gòn
+              </span>
+              <span class="infoMovieCinema">L3-Lotte Mart NSG, 469 Nguyễn Hữu Thọ, Q.7</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-CongHoa-tab" data-toggle="pill" href="#v-pills-CongHoa" role="tab"
+            aria-controls="v-pills-CongHoa" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/lotte-cinema-cong-hoa-15383860949090.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema LOTTE">LOTTE</span>
+                - Cộng Hòa
+              </span>
+              <span class="infoMovieCinema">L4-Pico Plaza, 20 Cộng Hòa, Tân Bình</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-Cantavil-tab" data-toggle="pill" href="#v-pills-Cantavil" role="tab"
+            aria-controls="v-pills-Cantavil" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/lotte-cinema-cantavil-15383866510260.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema LOTTE">LOTTE</span>
+                - Cantavil
+              </span>
+              <span class="infoMovieCinema">L7-Cantavil Premier, Xa Lộ Hà Nội, Q.2</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-PTho-tab" data-toggle="pill" href="#v-pills-PTho" role="tab"
+            aria-controls="v-pills-PTho" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/lotte-cinema-phu-tho-15383865322515.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema LOTTE">LOTTE</span>
+                - Phú Thọ
+              </span>
+              <span class="infoMovieCinema">L4-Lotte Mart Phú Thọ, Q.11</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-Nowzone-tab" data-toggle="pill" href="#v-pills-Nowzone" role="tab"
+            aria-controls="v-pills-Nowzone" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/lotte-cinema-nowzone-15383875427169.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema LOTTE">LOTTE</span>
+                - Nowzone
+              </span>
+              <span class="infoMovieCinema">L5-Nowzone, 235 Nguyễn Văn Cừ, Q.1</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="cinestar" role="tabpanel" aria-labelledby="cinestar-tab">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link cinema active" id="v-pills-QThanh-tab" data-toggle="pill" href="#v-pills-QThanh" role="tab"
+            aria-controls="v-pills-QThanh" aria-selected="true">
+            <img class="cinemaImage" src="../../../assets/img/cinestar-quoc-thanh-15379636956745.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema CNS">CNS</span>
+                - Quốc Thanh
+              </span>
+              <span class="infoMovieCinema">271 Nguyễn Trãi, Q.1</span>
+            </div>
+          </a>
+          <a class="nav-link cinema" id="v-pills-HBTrung-tab" data-toggle="pill" href="#v-pills-HBTrung" role="tab"
+            aria-controls="v-pills-HBTrung" aria-selected="false">
+            <img class="cinemaImage" src="../../../assets/img/cinestar-hai-ba-trung-15383833704033.jpg" alt="error">
+            <div class="wrapInfo">
+              <span class="nameMovieCinema">
+                <span class="colorCinema CNS">CNS</span>
+                - Hai Bà Trưng
+              </span>
+              <span class="infoMovieCinema">135 Hai Bà Trưng, Bến Nghé, Q.1</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="ddc" role="tabpanel" aria-labelledby="ddc-tab">
+        <p style="text-align:center;margin-top:20px">No Showtimes</p>
+      </div>
+      <div class="tab-pane fade" id="magaGS" role="tabpanel" aria-labelledby="megaGS-tab">
+        <p style="text-align:center;margin-top:20px">No Showtimes</p>
+      </div>
+      <div class="tab-pane fade" id="cgv" role="tabpanel" aria-labelledby="cgv-tab">
+        <p style="text-align:center;margin-top:20px">No Showtimes</p>
+      </div>
+      <div class="tab-pane fade" id="cinemaOther" role="tabpanel" aria-labelledby="cinemaOther-tab">
+        <p style="text-align:center;margin-top:20px">No Showtimes</p>
+      </div>
+    </div>
+    <div class="tab-content" id="listMovies" style="height: 717.85px;">
+      <div class="tab-pane fade show active" id="v-pills-phamHung" role="tabpanel" aria-labelledby="v-pills-phamHung-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-LVKiet" role="tabpanel" aria-labelledby="v-pills-LVKiet-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="v-pills-PVChi" role="tabpanel" aria-labelledby="v-pills-PVChi-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-NDU" role="tabpanel" aria-labelledby="v-pills-NDU-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-KDVuong" role="tabpanel" aria-labelledby="v-pills-KDVuong-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-QTrug" role="tabpanel" aria-labelledby="v-pills-QTrug-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-TChanh" role="tabpanel" aria-labelledby="v-pills-TChanh-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-QTPhat" role="tabpanel" aria-labelledby="v-pills-QTPhat-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-NVQua" role="tabpanel" aria-labelledby="v-pills-NVQua-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="v-pills-NSGon" role="tabpanel" aria-labelledby="v-pills-NSGon-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-CongHoa" role="tabpanel" aria-labelledby="v-pills-CongHoa-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-Cantavil" role="tabpanel" aria-labelledby="v-pills-Cantavil-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-PTho" role="tabpanel" aria-labelledby="v-pills-PTho-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-Nowzone" role="tabpanel" aria-labelledby="v-pills-Nowzone-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="v-pills-QThanh" role="tabpanel" aria-labelledby="v-pills-QThanh-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-HBTrung" role="tabpanel" aria-labelledby="v-pills-HBTrung-tab">
+        <div class="wrapMovie panel" *ngFor="let phim of DanhSachPhim">
+          <div class="movieInfo collapsed" data-toggle="collapse" [attr.href]=" '#P' + phim.MaPhim" role="button"
+            aria-expanded="false" aria-controls="collapseExample" ngDefaultControl (click)="clickPhim(phim.MaPhim)"
+            ngModel="{{phim.MaPhim}}">
+            <img class="movieImage" [src]="phim.HinhAnh" alt="error">
+            <div class="wrapInfo">
+              <p>
+                <span class="ageType">C13</span>
+                <span class="movieTitle">{{phim.TenPhim}}</span>
+              </p>
+              <p *ngFor="let phim of ChiTietPhim.LichChieu | slice: 0 : 1 ">{{phim.ThoiLuong}}p - 123Film 9.5 - IMDb
+                7.9</p>
+            </div>
+          </div>
+          <div id="{{ 'P' + phim.MaPhim}}" class="movieSessions fade">
+            <div class="listTypeTime">
+              <img src="../../../assets/img/2_1.png" alt="error">
+              <div class="sessions">
+                <a class="session" *ngFor="let phim of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:phim.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}">{{phim.NgayChieuGioChieu | date:"hh:mm"}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

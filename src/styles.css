@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+.owl-prev span {
+  position: absolute;
+  top: 46.6%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 100px;
+  z-index: 2;
+  opacity: .5;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  left: -35px;
+  font-size: -webkit-xxx-large;
+}
+
+.owl-next span {
+  position: absolute;
+  top: 46.6%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 100px;
+  z-index: 2;
+  opacity: .5;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  right: -35px;
+  font-size: -webkit-xxx-large;
+}
+
+.wrapSlick.banner-ads .slick-dots {
+  bottom: 2%;
+}
+
+.wrapSlick .slick-dots {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 0;
+}
+
+.wrapSlick .slick-dots li {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.wrapSlick.banner-ads .slick-dots li button {
+  width: 8px;
+  height: 8px;
+}
+
+
+.wrapSlick .slick-dots li.slick-active button {
+  background-color: #fb4226;
+}
+
+.wrapSlick .slick-dots li button {
+  background-color: #d8d8d8;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  color: transparent;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.slick-dots li button:before {
+  color: unset !important;
+}
+
+.wrapSlick .slick-slide {
+  height: auto;
+}
+
+.wrapSlick .slickComponent {
+  position: relative;
+}

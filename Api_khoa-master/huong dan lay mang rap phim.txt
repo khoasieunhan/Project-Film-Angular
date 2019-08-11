@@ -1,0 +1,2 @@
+open terminal folder Api_khoa-master
+node app.js

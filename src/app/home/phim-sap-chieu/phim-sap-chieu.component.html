@@ -1,0 +1,23 @@
+<!-- Swiper -->
+<div class="swiper-container px-lg-4 px-3">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let phim of DanhSachPhimSC">
+      <app-item-phim [phimInput]="phim"></app-item-phim>
+    </div>
+  </div>
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<!-- <div class="owl-carousel owl-theme row owl-loaded owl-drag px-lg-4 px-3" style="float: right;">
+  <div class="item" *ngFor="let phim of DanhSachPhimSC">
+      <app-item-phim [phimInput]=phim></app-item-phim>
+  </div>
+</div> -->
+
+<!-- <div class="responsive px-lg-4 px-3" init-onload=true data="awesomeThings">
+  <div *ngFor="let phim of DanhSachPhimSC">
+    <app-item-phim [phimInput]=phim></app-item-phim>
+  </div>
+</div> -->

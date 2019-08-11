@@ -1,0 +1,109 @@
+img {
+  width: 100%;
+}
+
+a[disabled="disabled"] {
+  pointer-events: none;
+}
+
+#wrapHomeApp {
+  padding-top: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#homeApp {
+  padding: 120px 0 80px 0;
+  background: url(../../../assets/img/backapp.jpg);
+  background-size: contain;
+  width: 100%;
+}
+
+.block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mainMaxWidth {
+  max-width: 940px;
+  float: none;
+  margin: auto;
+  clear: both;
+}
+
+#homeApp .left {
+  padding-top: 60px;
+}
+
+#homeApp .textLeft {
+  color: #fff;
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+#homeApp .textSmallLeft {
+  color: #fff;
+  font-size: medium;
+}
+
+#homeApp .buttonLeft {
+  background-color: #fb4226;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: medium;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+}
+
+#homeApp .textAppUnder {
+  color: #fff;
+  padding-top: 10px;
+}
+
+#homeApp .right {
+  position: relative;
+  padding: 0;
+}
+
+.carousel-inner>.item>a>img,
+.carousel-inner>.item>img,
+.img-responsive,
+.thumbnail a>img,
+.thumbnail>img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#homeApp #sliderScreen {
+  position: absolute;
+  padding: 10% 29.6% 5% 29.6%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.wrapSlick .slick-slide {
+  height: auto;
+}
+
+.wrapSlick .slickComponent {
+  position: relative;
+}
+
+#homeApp .tagA {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  cursor: hand;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fb4226;
+}
+

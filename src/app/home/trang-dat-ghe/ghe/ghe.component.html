@@ -1,0 +1,14 @@
+<button *ngIf="ghe.DaDat; else gheChuaDat" disabled="disabled" class="btn gheDaDat seat seatnotchoose">
+  <span class="numbercode"></span>
+  <p class="tenGhe" style="display: none;">{{ghe.TenGhe}}</p>
+  <img class="notchoose" src="../../../assets/img/notchoose.png" alt="error">
+</button>
+
+<ng-content></ng-content>
+
+<ng-template #gheChuaDat>
+  <button (click)="DatGhe()" class="btn ghe seat" [ngClass]="{'gheDangDat':TrangThaiDangDat}">
+    <span class="numbercode"></span>
+    <p class="tenGhe">{{ghe.TenGhe}}</p>
+  </button>
+</ng-template>

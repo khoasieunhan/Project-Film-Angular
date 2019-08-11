@@ -1,0 +1,150 @@
+<div id="homeTools" class="homeTools">
+
+  <div class="dropdown w30p perCenDrop selectfilm" id="selectMovie">
+    <div class="btn btn-primary dropdown-toggle selectMenu" *ngIf="!loadingTenPhim;else changeTenPhim" (click)="toggleShowDiv('divA')"
+      data-toggle="dropdown">
+      Films
+    </div>
+    <ng-template #changeTenPhim>
+      <div class="btn btn-primary dropdown-toggle selectMenu" [(ngModel)]="TenPhim" ngDefaultControl (click)="toggleShowDiv('divA')"
+        data-toggle="dropdown">
+        {{TenPhim}}
+      </div>
+    </ng-template>
+    <ul class="dropdown-menu select-Scroll divA" [@slideInOut]="animationState">
+      <li class="dropdown-item" *ngFor="let phim of DanhSachPhim">
+        <a (click)="choosePhim(phim)" ngDefaultControl [(ngModel)]="phim.TenPhim">{{phim.TenPhim}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dropdown smallBlock perCenDrop selectCinema" id="selectRap">
+    <div class="btn btn-primary dropdown-toggle selectMenu" *ngIf="!loadingTenRap;else changeTenRap" data-toggle="dropdown"
+      (click)="toggleShowDiv('divA')">
+      Cinemas
+    </div>
+    <ng-template #changeTenRap>
+      <div class="btn btn-primary dropdown-toggle selectMenu" [(ngModel)]="TenRap" ngDefaultControl (click)="toggleShowDiv('divA')"
+        data-toggle="dropdown">
+        {{TenRap | shortcut}}
+      </div>
+    </ng-template>
+    <ul class="dropdown-menu select-Scroll" [@slideInOut]="animationState">
+      <li class="dropdown-item" *ngIf="!isShowMovie; else openMoview">
+        <a>
+          Please select a movie
+        </a>
+      </li>
+      <ng-template #openMoview>
+        <ng-container *ngIf="isChoseMovie">
+          <li class="dropdown-item" *ngFor="let rap of DanhSachRapPhim.BHDStarCineplex">
+            <a (click)="chooseRap(rap)" ngDefaultControl [(ngModel)]="rap.TenRap">
+              <span>{{rap.RapPhim}}</span>
+              {{rap.TenRap}}
+            </a>
+          </li>
+        </ng-container>
+
+        <ng-container *ngIf="isChoseMovie">
+          <li class="dropdown-item" *ngFor="let rap of DanhSachRapPhim.CgvCinema">
+            <a (click)="chooseRap(rap)" ngDefaultControl [(ngModel)]="rap.TenRap">
+              <span>{{rap.RapPhim}}</span>
+              {{rap.TenRap}}
+            </a>
+          </li>
+        </ng-container>
+
+        <ng-container *ngIf="isChoseMovie">
+          <li class="dropdown-item" *ngFor="let rap of DanhSachRapPhim.CineStar">
+            <a (click)="chooseRap(rap)" ngDefaultControl [(ngModel)]="rap.TenRap">
+              <span>{{rap.RapPhim}}</span>
+              {{rap.TenRap}}
+            </a>
+          </li>
+        </ng-container>
+
+        <ng-container *ngIf="isChoseMovie">
+          <li class="dropdown-item" *ngFor="let rap of DanhSachRapPhim.LotteCinema">
+            <a (click)="chooseRap(rap)" ngDefaultControl [(ngModel)]="rap.TenRap">
+              <span>{{rap.RapPhim}}</span>
+              {{rap.TenRap}}
+            </a>
+          </li>
+        </ng-container>
+
+      </ng-template>
+
+    </ul>
+  </div>
+
+  <div class="dropdown smallBlock perCenDrop selectDay" id="selectWatch">
+    <div class="btn btn-primary dropdown-toggle selectMenu" *ngIf="!loadingDay;else changeDay" data-toggle="dropdown"
+      (click)="toggleShowDiv('divA')">
+      Day Watch
+    </div>
+    <ng-template #changeDay>
+      <div class="btn btn-primary dropdown-toggle selectMenu" [(ngModel)]="day" ngDefaultControl (click)="toggleShowDiv('divA')"
+        data-toggle="dropdown">
+        {{day | amDateFormat:'DD-MM-YYYY'}}
+      </div>
+    </ng-template>
+    <ul class="dropdown-menu select-Scroll" [@slideInOut]="animationState">
+      <li class="dropdown-item" *ngIf="!isChoseCinema; else openDay">
+        <a>
+          Please select movies and theaters
+        </a>
+      </li>
+      <ng-template #openDay>
+        <li class="dropdown-item" *ngFor="let day of weekDays">
+          <a (click)="chooseDay(day)" ngDefaultControl [(ngModel)]="day">
+            <span class="friendly" (click)="TodoCtrl(day)" style="display: block;
+          font-size: 15px;">{{day |
+              amDateFormat:'dddd'}}</span>
+            <span class="origin" (click)="TodoCtrl(day)" style="font-size: 11px;
+          color: #aaa;">{{day |
+              amDateFormat:'DD-MM-YYYY'}}</span>
+          </a>
+        </li>
+      </ng-template>
+
+    </ul>
+  </div>
+
+  <div class="dropdown smallBlock perCenDrop selectShow" id="selectTime">
+    <div class="btn btn-primary dropdown-toggle selectMenu" data-toggle="dropdown" *ngIf="!loadingDate;else changeDate"
+      (click)="toggleShowDiv('divA')">
+      Show Time
+    </div>
+    <ng-template #changeDate>
+      <div class="btn btn-primary dropdown-toggle selectMenu" [(ngModel)]="phimCT" ngDefaultControl data-toggle="dropdown"
+        (click)="toggleShowDiv('divA')">
+        {{phimCT | date:'hh:mm'}}
+      </div>
+    </ng-template>
+    <ul class="dropdown-menu select-Scroll" [@slideInOut]="animationState">
+      <li class="dropdown-item" *ngIf="!isChoseDate; else openShowTime">
+        <a>Please select movies, theaters, and dates</a>
+      </li>
+      <ng-template #openShowTime>
+        <li class="dropdown-item" *ngFor="let phimCT of ChiTietPhim.LichChieu">
+          <a (click)="chooseCT(phimCT)" ngDefaultControl [(ngModel)]="phimCT.NgayChieuGioChieu">{{phimCT.NgayChieuGioChieu
+            | date:'hh:mm'}}</a>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+
+  <div class="smallBlock perCenDrop">
+    <button class="btn btn-primary" *ngIf="!canBuyNowTool || !loadingDate; else openBuyTicket" id="btnBuy" type="button"
+      disabled="disabled">
+      Now buy ticket
+    </button>
+    <ng-template #openBuyTicket>
+      <button class="btn btn-primary active" *ngFor="let phimCT of ChiTietPhim.LichChieu" [routerLink]="['/trang-dat-ve']"
+        [queryParams]="{MaLichChieu: phimCT.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" id="btnBuy"
+        type="button" [ngClass]="{'active': canBuyNowTool || loadingDate}">
+        Now buy ticket
+      </button>
+    </ng-template>
+  </div>
+</div>

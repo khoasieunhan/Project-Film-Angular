@@ -1,0 +1,44 @@
+table.dataTable tbody tr:nth-child(even):hover td {
+  background-color: #eee !important;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+table.dataTable tbody tr:nth-child(odd):hover td {
+  background-color: #eee !important;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.buttonEdit,
+.buttonRemove {
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+  outline: 0;
+}
+
+.buttonEdit span {
+  color: #FF5722;
+}
+
+/* .md-form .prefix {
+  margin-left: -8em;
+} */
+
+.md-form .prefix.active {
+  color: #4285f4 !important;
+}
+
+.md-form label.active {
+  color: #4285f4 !important;
+}
+
+.addFilm {
+  /* padding: 10px 5px 10px 5px; */
+  outline: 0;
+  font-size: 16px;
+  font-weight: bold;
+  /* float: right; */
+  margin-left: 46.710em;
+}

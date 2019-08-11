@@ -1,0 +1,52 @@
+#homeMovies {
+    padding-top: 75px;
+}
+
+.mainNews {
+    max-width: 940px;
+    float: none;
+    margin: auto;
+    clear: both;
+}
+
+#homeMovies .navCenter li a.active {
+    font-size: 24px;
+}
+
+.nav-pills.navCenter{
+    justify-content: center!important;
+    border: none!important;
+    margin-bottom: 30px!important;
+}
+
+.nav-pills.navCenter li {
+    display: inline-block;
+    float: none;
+}
+
+#homeMovies .navCenter a {
+    font-size: 20px;
+    line-height: 24px;
+    height: 24px;
+    font-family: 'SF Medium';
+    font-weight: bold;
+}
+
+.nav-pills.navCenter li a.active {
+    color: #fa5238!important;
+}
+
+.nav-pills.navCenter li a {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    transition: all .2s;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'SF Medium';
+}
+
+#homeMovies .navCenter a:hover {
+    font-size: 24px;
+}
+

@@ -1,0 +1,325 @@
+<div class="row" id="checkout">
+  <div *ngIf="!loadingticket; else hideBackGround">
+    <div id="leftcheckout" class="leftcheckout wow fadeInRight" [style.background-image]="'url(' + ChiTietPhim.HinhAnh + ')'"
+      [ngStyle]="{'left': '0px'}">
+      <div class="modalleft">
+      </div>
+      <div class="back">
+        <img class="backbutton" src="../../../assets/img/prev_checkout.png">
+      </div>
+      <div class="titlefilm" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+        <p class="info1">{{today | date: 'EEEE'}}</p>
+        <p class="info2">
+          <span class="ageType">C13</span>
+          {{ChiTietPhim.TenPhim}}
+        </p>
+        <p class="info3">{{lichChieu.ThoiLuong}}p - 123Film 6.6 - IMDb 7.3 - 2D/Digital</p>
+      </div>
+    </div>
+  </div>
+  <ng-template #hideBackGround>
+    <div id="leftcheckout" class="leftcheckout wow fadeInLeft" [style.background-image]="'url(' + ChiTietPhim.HinhAnh + ')'"
+      [ngStyle]="{'left': '-292.278px', 'transition': 'all 0.5s'}">
+      <div class="modalleft">
+      </div>
+      <div class="back">
+        <img class="backbutton" src="../../../assets/img/prev_checkout.png">
+      </div>
+      <div class="titlefilm" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1" style="display: none;">
+        <p class="info1">{{today | date: 'EEEE'}}</p>
+        <p class="info2">
+          <span class="ageType">C13</span>
+          {{ChiTietPhim.TenPhim}}
+        </p>
+        <p class="info3">{{lichChieu.ThoiLuong}}p - 123Film 6.6 - IMDb 7.3 - 2D/Digital</p>
+      </div>
+    </div>
+  </ng-template>
+  <div id="ticketcheckout" class="ticketcheckout wow fadeInDown" [ngClass]="{'ticketcheckout': loadingticket}"
+    [ngStyle]="loadingticket">
+    <div class="row" id="ticket" *ngIf="!loadingticket; else seatCheatOut">
+      <div class="topContent row" *ngFor="let rapPhim of BHDStarCineplex | slice: 0 : 1">
+        <div class="logocinema">
+          <img class="logo img-responsive" [src]="rapPhim.image">
+        </div>
+        <div class="contentcinema">
+          <p class="address"><span class="pcinema" style="color:#8bc541">{{rapPhim.RapPhim}}</span><span class="cinemaname">
+              - &lrm; {{rapPhim.tenRap}}</span>
+          </p>
+          <p class="hour" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+            <!-- <app-danh-sach-ghe style="display: none;" [danhSachGhe]="lichChieu"></app-danh-sach-ghe> -->
+            Today-{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}AM
+            <span class="rapSo">
+              - {{lichChieu.Rap.TenRap}}
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="ticketType">
+        <div class="ticket-type" *ngFor="let gheDat of MangGiaVeThuong">
+          <!-- *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1" -->
+          <!-- lichChieu.DanhSachGhe | slice: 0 : 1 -->
+          <div class="row ticket">
+            <div class="col-sm-4 col-xs-7 typeticket">
+              Regular Tickets 2D
+              <div class="priceticketmobile">{{gheDat.GiaVe | number}} vnd</div>
+            </div>
+            <div class="col-sm-4 priceticket">{{gheDat.GiaVe | number}} vnd</div>
+            <div class="col-sm-4 col-xs-5 opnum">
+              <button class="minus" type="button" *ngIf="numberCountVip === 0; else clickAbstract" style="color: #9b9b9b !important;cursor: initial;">-</button>
+              <!-- *ngIf="num.ticket < 0;else clickAbstract" -->
+              <ng-template #clickAbstract>
+                <button class="minus" type="button" *ngIf="numberCountVip > 0" style="color: #FB4226 !important;"
+                  (click)="minusTicket1(gheDat)">-</button>
+              </ng-template>
+              <span class="number">{{numberCountVip}}</span>
+              <button class="add" type="button" style="color: #FB4226 !important;" *ngIf="numberCountVip < 10; else clickPlus"
+                (click)="ddTicket1(gheDat)">+</button>
+              <!-- ng-if="ticket.type_num<10 &amp;&amp; totalticket<10"
+              ng-click="addTicket(ticket)" -->
+              <ng-template #clickPlus>
+                <button class="add" type="button" *ngIf="numberCountVip === 10" style="color: #9b9b9b !important;
+                  cursor: initial;">+</button>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-type" *ngFor="let gheDat of MangGiaVeVip">
+          <!-- lichChieu.DanhSachGhe | slice: 1 : 2 -->
+          <div class="row ticket">
+            <div class="col-sm-4 col-xs-7 typeticket">
+              Vip Tickets 2D
+              <div class="priceticketmobile">{{gheDat.GiaVe | number}} vnd</div>
+            </div>
+            <div class="col-sm-4 priceticket">{{gheDat.GiaVe | number}} vnd</div>
+            <div class="col-sm-4 col-xs-5 opnum">
+              <button type="button" class="minus" *ngIf="numberCount === 0; else clickAbstract" style="color: #9b9b9b !important;cursor: initial;">-</button>
+              <!-- *ngIf="num.ticket < 0;else clickAbstract" -->
+              <ng-template #clickAbstract>
+                <button class="minus" type="button" *ngIf="numberCount > 0" style="color: #FB4226 !important;" (click)="minusTicket(gheDat)">-</button>
+              </ng-template>
+              <span class="number">{{numberCount}}</span>
+              <button class="add" type="button" style="color: #FB4226 !important;" *ngIf="numberCount < 10; else clickPlus"
+                (click)="ddTicket(gheDat)">+</button>
+              <!-- ng-if="ticket.type_num<10 &amp;&amp; totalticket<10"
+                ng-click="addTicket(ticket)" -->
+              <ng-template #clickPlus>
+                <button class="add" *ngIf="numberCount === 10" style="color: #9b9b9b !important;
+                  cursor: initial;">+</button>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detailticket setStatic">
+        <div class="chosenTicket row">
+          <div class="chosencontent">
+            <div class="totalcostfull">
+              <div class="title">ToTal</div>
+              <div class="chosenpriceticket" [@focusPanel]=state [@movePanel]=state id="totalcost" style="font-size: 22px; font-weight: bold;">{{total
+                |
+                number}} vnd</div>
+            </div>
+          </div>
+          <div class="chosenbutton disabled" *ngIf="!loadingticket; else seatCheatOut" (click)="choseSeat()" [ngClass]="{'disabled': numberCount === 0 && numberCountVip === 0}">
+            <span class="continue">Choose Seat</span>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="note">Please note, it is not possible to cancel or change the rate for a purchased ticket.</div>
+          <div class="hot">
+            <div class="hotline">
+              <p class="hotlinetitle">HOTLINE</p>
+              <p class="costcall">Call charge 1000VND / min</p>
+            </div>
+            <div class="phone">1900 113 911
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #seatCheatOut>
+      <!-- [ngTemplateOutlet]="openCountDown" -->
+    <div id="loadBack" class="loadBack wow fadeInDown" (click)="loadBack()">
+      <img class="loadBackButton" src="../../../assets/img/button-prev.png" alt="error">
+    </div>
+    <div id="seatcheckout" class="seatcheckout wow fadeInDown" style="margin: 0 auto; float: unset; width: unset; padding-top: unset;">
+      <div class="row" id="seat">
+        <div class="topContent row" *ngFor="let rapPhim of BHDStarCineplex | slice: 0 : 1">
+          <div class="lefttitle col-md-10">
+            <div class="logocinema">
+              <img [src]="rapPhim.image" alt="error">
+            </div>
+            <div class="contentcinema">
+              <p class="address"><span class="pcinema" style="color:#8bc541">{{rapPhim.RapPhim}}</span><span class="cinemaname">
+                  - &lrm; {{rapPhim.tenRap}}</span>
+              </p>
+              <p class="hour" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+                Today-{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}AM
+                <span class="rapSo">
+                  - {{lichChieu.Rap.TenRap}}
+                </span>
+            </div>
+          </div>
+          <div class="righttitle col-md-2">
+            <p class="info1">Chair retention time</p>
+            <p class="info2">
+              <span class="minute">{{countDown | async | formatTime}}</span>
+              <!-- :<span class="second">00</span> -->
+            </p>
+          </div>
+        </div>
+        <div class="seatmap">
+          <div class="parent-panzoom" id="seatmanroom">
+            <div class="screen">
+              <div class="namescreen">
+                <img class="logo" src="../../..//assets/img/screen.png" alt="error">
+              </div>
+            </div>
+            <div class="listseat">
+              <app-ghe class="rowseat col-md-2" (eventDatGhe)="DatGhe($event)" [listTicket]="listTicket" [ghe]="ghe"
+                *ngFor="let ghe of lichChieu.DanhSachGhe; let title = index">
+                <br *ngIf="(title - 1 * 2) % 6 === 3" />
+              </app-ghe>
+              <img src="../../../assets/img/exit.png" alt="error" class="entrance">
+            </div>
+          </div>
+          <div class="noteseat">
+            <div class="costadd"></div>
+            <div class="typeseats">
+              <span class="typeseat">
+                <span class="colorseat colornull"></span>
+                <span class="nameseat">Empty Seat</span>
+              </span>
+              <span class="typeseat">
+                <span class="colorseat colorcouple"></span>
+                <span class="nameseat">Double Chair</span>
+              </span>
+              <span class="typeseat">
+                <span class="colorseat colorvip"></span>
+                <span class="nameseat">VIP Seats</span>
+              </span>
+
+              <span class="typeseat">
+                <span class="colorseat colordeluxe"></span>
+                <span class="nameseat">DELUXE Seats</span>
+              </span>
+
+              <span class="typeseat">
+                <span class="colorseat colorchoosing"></span>
+                <span class="nameseat">Chairs are selected</span>
+              </span>
+              <span class="typeseat">
+                <span class="colorseat colorchosen">
+                  <img class="notchoose" src="../../../assets/img/xController.png">
+                </span>
+                <span class="nameseat">Chairs have been chosen</span>
+              </span>
+              <span class="typeseat">
+                <span class="colorseat colornotchoose">
+                  <img class="notchoose" src="../../../assets/img/notchoose.png">
+                </span>
+                <span class="nameseat">Chairs can not be selected</span>
+              </span>
+            </div>
+            <div class="positionviews">
+              <span class="positionview">
+                <span class="lineview linecenter"></span>
+                <span class="titleview">Central Seat</span>
+              </span>
+              <span class="positionview">
+                <span class="lineview linebeautiful"></span>
+                <span class="titleview">Nice Chair</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rebookticketcheckout" class="disabled" *ngIf="this.counter; else openCountDown">
+      <div class="contentfull">
+        The time to hold the seat has expired. Please make an order within 5 minutes.
+        <a (click)="loadBack()" style="color:#FB4226;">Reservation ticket</a>
+      </div>
+    </div>
+    <ng-template #openCountDown>
+      <div id="rebookticketcheckout" class="wow fadeInDown disabled" style="display: block;">
+        <div class="contentfull">
+          The time to hold the seat has expired. Please make an order within 5 minutes.
+          <a (click)="loadBack()" style="color:#FB4226;">Reservation ticket</a>
+        </div>
+      </div>
+    </ng-template>
+    <div id="rightcheckout" class="rightcheckout wow fadeInDown" style="right: 0px;">
+      <div class="contentfullright customScroll">
+        <div class="row total">
+          <p class="cash" id="totalcost">{{total
+            |
+            number}} vnd</p>
+          <!-- <div class="cash" id="totalcost"></div> -->
+        </div>
+        <div class="row filmname" *ngFor="let rapPhim of BHDStarCineplex | slice: 0 : 1">
+          <span class="ageType">C13</span>
+          {{ChiTietPhim.TenPhim}}
+          <div class="contentcinema">
+            <div class="address">
+              <span class="pcinema">{{rapPhim.RapPhim}}</span>
+              <span class="cinemaname">- {{rapPhim.tenRap}}</span>
+            </div>
+            <div class="hour" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">Today-{{lichChieu.NgayChieuGioChieu
+              | date:'hh:mm'}}AM
+              <span class="rapSo">
+                - {{lichChieu.Rap.TenRap}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="chair row">
+          <div class="info col-sm-7 col-xs-7">
+            <span style="color: #fb4226">Seats</span>
+            <span class="title" style="margin-left: 5px;" *ngFor="let TenGheP of TenGheF; let isLast=last">{{TenGheP.TenGhe}}{{item}}{{isLast
+              ? '' : ', '}}</span>
+          </div>
+          <div class="totalchair col-sm-5 col-xs-5 ng-binding">{{total
+            |
+            number}} vnd</div>
+        </div>
+        <div class="methodpay">
+          <div class="titlemethodpay">
+            Payments
+            <div class="errormethodpay" style="display: none;"></div>
+          </div>
+          <div class="chosenmethod">
+            <div class="custom-control custom-radio">
+              <input #inputEl type="radio" class="custom-control-input" id="defaultGroupExample1" [(ngModel)]="isChecked"
+                name="groupOfDefaultRadios" (change)="onChange(inputEl.checked)" value="inputEl.checked">
+              <img class="icon" src="https://www.nganluong.vn/css/newhome/img/button/pay-lg.png" style="border:0; width: auto;" />
+              <label class="custom-control-label" for="defaultGroupExample1">Ngan Luong</label>
+            </div>
+            <!-- Group of default radios - option 2 -->
+            <div class="custom-control custom-radio" style="margin-top: 1em;">
+              <input #inputEll type="radio" class="custom-control-input" id="defaultGroupExample2" name="groupOfDefaultRadios"
+                [(ngModel)]="isChecked" (change)="onChange(inputEll.checked)" value="inputEll.checked">
+              <img src="http://www.baokim.vn/developers/uploads/baokim_btn/buynow-l.png" alt="Thanh toán an toàn với Bảo Kim !"
+                class="icon" style="border: 0; width: auto;" title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn">
+              <!-- </a> -->
+              <label class="custom-control-label" for="defaultGroupExample2">Bao Kim</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="buyticket" *ngIf="total === 0 || !isChecked || !GheDuocDat; else buyTicket" style="background-color: #afafaf;background-image: none;cursor: initial;"
+        disabled="disabled">
+        Books Ticket
+        <!-- ngIf: loading -->
+      </div>
+      <ng-template #buyTicket>
+        <div class="buyticket" disabled="" (click)="DatVe()" [ngClass]="{'buyticket': GheDuocDat}">
+          Books Ticket
+          <!-- ngIf: loading -->
+        </div>
+      </ng-template>
+    </div>
+  </ng-template>
+</div>

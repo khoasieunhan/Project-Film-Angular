@@ -1,0 +1,11 @@
+table.dataTable tbody tr:nth-child(even):hover td {
+  background-color: #eee !important;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+table.dataTable tbody tr:nth-child(odd):hover td {
+  background-color: #eee !important;
+  transition: all 0.5s;
+  cursor: pointer;
+}

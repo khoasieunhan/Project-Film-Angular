@@ -1,0 +1,124 @@
+<div id="content-wrapper">
+
+  <div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active">Movie Managerment</li>
+    </ol>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+      <div class="card-header" style="line-height: 60px;">
+        <i class="fas fa-table"></i>
+        Data Table Example
+        <div class="addButton" id="addButton" style="float: right">
+          <button class="addFilm btn btn-outline-info btn-rounded" type="button" id="addFilm" (click)="buttonAdd(phim)" data-toggle="modal" data-target="#modalForm1">
+            <i class="fas fa-film" style="margin-right: 10px;"></i>Add Film</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Movie code</th>
+                <th>Movie's name</th>
+                <th>Trailer</th>
+                <th>Image</th>
+                <th>Describe</th>
+                <th>Group code</th>
+                <th>Release date</th>
+                <th>Reviews</th>
+                <th>Function</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Movie code</th>
+                <th>Movie's name</th>
+                <th>Trailer</th>
+                <th>Image</th>
+                <th>Describe</th>
+                <th>Group code</th>
+                <th>Release date</th>
+                <th>Reviews</th>
+                <th>Function</th>
+              </tr>
+            </tfoot>
+            <tbody style="text-align: center;">
+              <tr *ngFor="let phim of DanhSachPhim">
+                <td>
+                  <input type="checkbox" name="MaPhim" (change)="checkbox(phim)" ngModel [checked]="phim.MaPhim">                 
+                </td>
+                <!-- [(ngModel)]="phim.MaPhim" -->
+                <td>{{phim.MaPhim}}</td>
+                <td>{{phim.TenPhim}}</td>
+                <td>{{phim.Trailer | shortcut: 20}}</td>
+                <td><img [src]="phim.HinhAnh" alt="error" class="img-fluid"></td>
+                <td>{{phim.MoTa | shortcut: 20}}</td>
+                <td>{{phim.MaNhom}}</td>
+                <td>{{phim.NgayKhoiChieu | date:'dd.MM.yyyy'}}</td>
+                <td>{{phim.DanhGia}}</td>
+                <td>
+                  <button class="buttonEdit" (click)="buttonEdit(phim)" data-toggle="modal" data-target="#modalForm">
+                    <span class="fa fa-pencil-square-o"></span>
+                  </button>
+                  |
+                  <button class="buttonRemove" type="button" (click)="XoaPhim()">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr *ngFor="let phim of DanhSachPhimSC">
+                <td>
+                  <input type="checkbox" name="MaPhim" (change)="checkbox(phim)" ngModel [checked]="phim.MaPhim">                 
+                </td>
+                <!-- [(ngModel)]="phim.MaPhim" -->
+                <td>{{phim.MaPhim}}</td>
+                <td>{{phim.TenPhim}}</td>
+                <td>{{phim.Trailer | shortcut: 20}}</td>
+                <td><img [src]="phim.HinhAnh" alt="error" class="img-fluid"></td>
+                <td>{{phim.MoTa | shortcut: 20}}</td>
+                <td>{{phim.MaNhom}}</td>
+                <td>{{phim.NgayKhoiChieu | date:'dd.MM.yyyy'}}</td>
+                <td>{{phim.DanhGia}}</td>
+                <td>
+                  <button class="buttonEdit" (click)="buttonEdit(phim)" data-toggle="modal" data-target="#modalForm">
+                    <span class="fa fa-pencil-square-o"></span>
+                  </button>
+                  |
+                  <button class="buttonRemove" type="button" (click)="XoaPhim()">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+    <p class="small text-center text-muted my-5">
+      <em>More table examples coming soon...</em>
+    </p>
+
+  </div>
+  <!-- /.container-fluid -->
+
+  <!-- Sticky Footer -->
+  <footer class="sticky-footer">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright © Your Website 2018</span>
+      </div>
+    </div>
+  </footer>
+
+</div>

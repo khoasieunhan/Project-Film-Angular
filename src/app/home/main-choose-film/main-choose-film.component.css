@@ -1,0 +1,354 @@
+body {
+  font-family: 'SF Text Regular';
+}
+
+img {
+  width: 100%;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #fb4226;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.grayBack {
+  background-image: url(/app/assets/img/noel/2018/bg.jpg);
+  background-position: top left;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.session-main {
+  padding-bottom: 40px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#homeCinemaComplex,
+#homeNews {
+  background: 0 0;
+}
+
+#homeCinemaComplex {
+  padding-top: 120px;
+  background: url(../../../assets/img/back-news.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.mainMaxWidth {
+  max-width: 940px;
+  float: none;
+  margin: auto;
+  clear: both;
+}
+
+.block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#homeCinemaComplex #listCinemas,
+#homeCinemaComplex #listMovies,
+#homeCinemaComplex .listPCinemas {
+  background-color: #fff;
+}
+
+#homeCinemaComplex .listPCinemas {
+  min-height: 705px;
+  width: 92px;
+  float: left;
+  border: 1px solid #ebebec;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#homeCinemaComplex #listCinemas {
+  float: left;
+  min-height: 705px;
+  border-top: 1px solid #ebebec;
+  border-bottom: 1px solid #ebebec;
+  width: 30%;
+  overflow-y: hidden;
+}
+
+#homeCinemaComplex .listPCinemas li {
+  float: none;
+}
+
+#homeCinemaComplex .listPCinemas li a {
+  padding: 20px;
+  position: relative;
+  transition: all .2s;
+}
+
+#homeCinemaComplex .nav-tabs li a {
+  border: none !important;
+  cursor: pointer;
+}
+
+#homeCinemaComplex .listPCinemas li a.active img {
+  opacity: 1;
+}
+
+#homeCinemaComplex .listPCinemas li a img {
+  opacity: .5;
+}
+
+#homeCinemaComplex .listPCinemas li a:hover img {
+  opacity: 1;
+}
+
+#homeCinemaComplex .listPCinemas img {
+  width: 50px;
+}
+
+#homeCinemaComplex .nav-tabs li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: calc(100% - 40px);
+  transform: translateX(-50%);
+  border-bottom: 1px solid #fff;
+  border-bottom-color: rgb(255, 255, 255);
+  border-color: rgba(238, 238, 238, .88);
+}
+
+#homeCinemaComplex .cinema:first-child {
+  padding-top: 20px;
+}
+
+#homeCinemaComplex .cinema.active {
+  opacity: 1;
+}
+
+#homeCinemaComplex .cinema {
+  padding: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-left: 20px;
+  float: left;
+  clear: both;
+  width: 100%;
+  position: relative;
+  opacity: .5;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+#homeCinemaComplex .cinemaImage {
+  width: 50px;
+  float: left;
+}
+
+#homeCinemaComplex .cinema .wrapInfo {
+  padding-left: 60px;
+}
+
+#homeCinemaComplex .cinema {
+  cursor: pointer;
+}
+
+#homeCinemaComplex .nameMovieCinema {
+  font-size: 14px;
+  color: #000;
+}
+
+.colorCinema.BHD {
+  color: #8bc541;
+}
+
+.colorCinema {
+  color: #000;
+  display: inline-block !important;
+}
+
+#homeCinemaComplex .cinema span {
+  display: block;
+  line-height: 1.4;
+}
+
+#homeCinemaComplex .infoMovieCinema {
+  font-size: 12px;
+  color: #949494;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#homeCinemaComplex .cinema::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: calc(100% - 40px);
+  transform: translateX(-50%);
+  border-bottom: 1px solid #fff;
+  border-bottom-color: rgb(255, 255, 255);
+  border-color: rgba(238, 238, 238, .88);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: unset;
+}
+
+#homeCinemaComplex #listMovies {
+  float: left;
+  min-height: 705px;
+  width: calc(100% - 30% - 92px);
+  border: 1px solid #ebebec;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#homeCinemaComplex .cinema:hover {
+  opacity: 1;
+}
+
+#homeCinemaComplex #listMovies .wrapMovie {
+  float: left;
+  clear: both;
+  padding-bottom: 17px;
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-left: 20px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 0;
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#homeCinemaComplex #listMovies .movieInfo {
+  float: left;
+  clear: both;
+  cursor: pointer;
+  width: 100%;
+}
+
+#homeCinemaComplex #listMovies .movieImage {
+  width: 50px;
+  float: left;
+  height: 50px;
+  object-fit: cover;
+}
+
+#homeCinemaComplex #listMovies .wrapInfo {
+  width: 100%;
+  padding-left: 65px;
+  padding-top: 6px;
+}
+
+#homeCinemaComplex #listMovies .wrapInfo p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+#homeCinemaComplex #listMovies .wrapInfo .ageType {
+  background-color: #fb4226;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0 5px;
+  float: left;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+#homeCinemaComplex #listMovies .wrapInfo .movieTitle {
+  font-size: 14px;
+  display: block;
+  font-family: 'SF Medium';
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #000;
+}
+
+#homeCinemaComplex #listMovies .wrapInfo p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+#homeCinemaComplex #listMovies .wrapMovie::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: calc(100% - 40px);
+  transform: translateX(-50%);
+  border-bottom: 1px solid #ccc;
+  border-bottom-color: rgb(204, 204, 204);
+  border-color: rgba(238, 238, 238, .88);
+}
+
+#homeCinemaComplex #listMovies .movieSessions {
+  width: 100%;
+  padding-left: 10px;
+}
+
+#homeCinemaComplex #listMovies .movieSessions {
+  clear: both;
+}
+
+#homeCinemaComplex #listMovies .listTypeTime {
+  float: left;
+  width: 100%;
+  padding-top: 15px;
+}
+
+#homeCinemaComplex #listMovies .listTypeTime img {
+  float: left;
+  margin-right: 35px;
+  margin-top: 7px;
+  width: 30px;
+  height: 26px;
+}
+
+.wrapMovie .sessions {
+  display: inline-block !important;
+  width: calc(100% - 80px) !important;
+}
+
+#homeCinemaComplex #listMovies .session {
+  font-family: 'SF Medium';
+  color: #417505;
+  float: left;
+  width: 15%;
+  font-size: 22px;
+  font-weight: 400;
+  color: #417500;
+  margin: 0 5px 5px 0;
+  transition: all .2s;
+  text-decoration: none;
+  display: block;
+}
+
+.wrapMovie .session {
+  width: 15% !important;
+}
+
+.collapse.show {
+  transition: all 2s;
+}

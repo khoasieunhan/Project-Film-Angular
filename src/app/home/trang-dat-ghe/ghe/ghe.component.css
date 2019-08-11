@@ -1,0 +1,75 @@
+img {
+  width: 100%;
+}
+
+button {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.gheDaDat {
+  cursor: no-drop;
+  background-color: #000000;
+  color: #fff;
+  margin: 5px;
+  
+}
+
+.gheDangDat {
+  background: green !important;
+}
+
+.ghe {
+  cursor: pointer;
+  background-color: #cecece;
+  color: #fff;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.seat .tenGhe {
+  position: absolute;
+  top: -2px;
+  left: 5px;
+  color: #fff;
+}
+
+@media (max-width: 1500px) and (min-width: 1024px) {
+  :host .seat {
+    height: 22px !important;
+    width: 22px !important;
+  }
+}
+
+:host .seatnotchoose {
+  background-color: #000000;
+}
+
+:host .seat {
+  position: relative;
+  border-radius: 3px;
+  margin-right: 5px;
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+}
+
+:host .seat .notchoose {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: auto;
+}
+
+:host .numbercode {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    font-size: 14px;
+}

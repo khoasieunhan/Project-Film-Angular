@@ -1,0 +1,328 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/">
+    <img class="webLogo" src="../../assets/img/web-logo.png" alt="error">
+  </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse justify-content-center navHeader" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link titleDisplay" href="#">Showtimes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link titleDisplay" href="#">Cinemas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link titleDisplay" href="#">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link titleDisplay" href="#">Application</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="right">
+    <ul class="login__signup">
+      <li #loginacc class="loginAcc" *ngIf="!isLogin; else isLoginTemplate">
+          <!-- !isLogin3; else isLoginTemplate3 ||  -->
+        <!-- Button to Open the Modal -->
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-user-circle" aria-hidden="true"></span>
+          <p class="white" style="display: inline-block;">Login</p>
+        </a>
+        <div class="dropdown-menu dropdown-primary">
+          <a class="titleDisplay cirImg dropdown-item" data-toggle="modal" data-target="#elegantModalForm">
+            <span class="fas fa-user-circle" aria-hidden="true"></span>
+            <p class="white" style="display: inline-block;">Login</p>
+          </a>
+          <a class="dropdown-item" type="submit" (click)="socialSignIn('facebook')" class="btn btn-white btn-rounded mr-md-3 z-depth-1a" style="border: none;"><i class="fab fa-facebook-f text-center"></i></a>
+          <a class="dropdown-item" type="submit" class="btn btn-white btn-rounded mr-md-3 z-depth-1a" style="border: none;"><i class="fab fa-google-plus-g"></i></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+        <!-- <a class="titleDisplay cirImg" data-toggle="modal" data-target="#elegantModalForm">
+          <span class="fas fa-user-circle" aria-hidden="true"></span>
+          <p class="white" style="display: inline-block;">Login</p>
+        </a> -->
+        <!-- <div class="row my-3 d-flex justify-content-center">
+            Facebook
+            <button type="submit" (click)="socialSignIn('facebook')" *ngIf="!isLogin3; else isLoginTemplate3" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
+            Twitter
+            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter"></i></button>
+            Google +
+            <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
+        </div> -->
+      </li>
+
+      <ng-template #isLoginTemplate>
+        <div class="dropdown">
+          <li class="nav-item loginAcc" style="line-height: inherit;">
+            <span class="fas fa-user-circle" aria-hidden="true" style="margin-right: -15px;"></span>
+            <a class="nav-link titleDisplay white cirImg waves-light dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton" style=" text-transform: uppercase; display: inline-block; padding: 0 0 0 25px; color: #9b9b9b;">{{nguoiDung.TaiKhoan}}</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item buttonHistory" data-target="#centralModalInfo" data-toggle="modal">
+                Ticket Purchase history
+              </a>
+            </div>
+          </li>
+        </div>
+      </ng-template>
+
+      <!-- <ng-template #isLoginTemplate3>
+        <div class="dropdown">
+          <li class="nav-item loginAcc" style="line-height: inherit;">
+            <span class="" aria-hidden="true" style="margin-right: -15px;">
+              <img [src]="socialFB.image" alt="error" class="img-fluid" style="width: 30px;">
+            </span>
+            <a class="nav-link titleDisplay white cirImg waves-light dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton" style=" text-transform: uppercase; display: inline-block; padding: 0 0 0 25px; color: #9b9b9b;">{{socialFB.name}}</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item buttonHistory" data-target="#centralModalInfo" data-toggle="modal">
+                Ticket Purchase history
+              </a>
+            </div>
+          </li>
+        </div>
+      </ng-template> -->
+
+      <li class="signUp" *ngIf="!isLogin; else isLoginTemplate4">
+          <!-- !isLogin3; else isLoginTemplate2 ||  -->
+        <!-- Button to Open the Modal -->
+        <a class="titleDisplay cirImg" data-toggle="modal" data-target="#myModal2">
+          <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+          <p class="white" style="display: inline-block; padding: 0 20px 0 25px;">Sign-up</p>
+        </a>
+      </li>
+
+      <!-- <ng-template #isLoginTemplate2>
+        <li class="nav-item" style="line-height: inherit;">
+          <a class="nav-link white titleDisplay cirImg" style="cursor:pointer; display: inline-block; padding: 0 20px 0 10px;color: #9b9b9b;"
+            (click)="DangXuat()">Log Out</a>
+        </li>
+      </ng-template> -->
+
+      <ng-template #isLoginTemplate4>
+        <li class="nav-item" style="line-height: inherit;">
+          <a class="nav-link white titleDisplay cirImg" style="cursor:pointer; display: inline-block; padding: 0 20px 0 10px;color: #9b9b9b;"
+            (click)="DangXuat()">Log Out</a>
+        </li>
+      </ng-template>
+
+    </ul>
+  </div>
+
+</nav>
+
+<!-- Sign-in -->
+<!-- The Modal -->
+<!-- Modal -->
+<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <form #formLogin="ngForm" (ngSubmit)="DangNhap(taiKhoan.value,matKhau.value, 'facebook')">
+    <div class="modal-dialog" role="document">
+      <!--Content-->
+      <div class="modal-content form-elegant">
+        <!--Header-->
+        <div class="modal-header text-center">
+          <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign in</strong></h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body mx-4">
+          <!--Body-->
+          <div class="md-form mb-5">
+            <input #taiKhoan type="text" [attr.id]="UsernameLogin" name="TaiKhoan" class="form-control validate"
+              required ngModel style="padding-left: 5px;">
+            <div *ngIf="taiKhoan.errors && (taiKhoan.touched || taiKhoan.dirty)">
+              <div *ngIf="taiKhoan.errors" class="alert alert-danger">
+                Please enter your account!
+              </div>
+            </div>
+            <label data-error="wrong" data-success="right" for="Form-text1">Your ID</label>
+          </div>
+
+          <div class="md-form pb-3">
+            <input #matKhau type="password" [attr.id]="PasswordLogin" name="MatKhau" class="form-control validate"
+              required ngModel style="padding-left: 5px;">
+            <div *ngIf="matKhau.errors && (matKhau.touched || matKhau.dirty)">
+              <div *ngIf="matKhau.errors" class="alert alert-danger">
+                Please enter your password!
+              </div>
+            </div>
+            <label data-error="wrong" data-success="right" for="Form-pass1">Your Password</label>
+            <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
+                Password?</a></p>
+          </div>
+
+          <div class="text-center mb-3">
+            <button type="submit" (click)="DangNhap(taiKhoan.value,matKhau.value)" [disabled]="formLogin.invalid" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-effect waves-light">Sign
+              in</button>
+          </div>
+          <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
+            with:</p>
+
+          <!-- <div class="row my-3 d-flex justify-content-center">
+            Facebook
+            <button type="submit" (click)="socialSignIn('facebook')" *ngIf="!isLogin3; else isLoginTemplate3" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i
+                class="fab fa-facebook-f text-center"></i></button>
+            Twitter
+            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter"></i></button>
+            Google +
+            <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
+          </div> -->
+        </div>
+        <!--Footer-->
+        <div class="modal-footer mx-5 pt-3 mb-1">
+          <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1">
+              Sign Up</a></p>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </form>
+
+</div>
+<!-- Modal -->
+
+<!-- signup Model -->
+<!-- Modal2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body modal-body-sub_agile">
+        <div class="main-mailposi">
+          <span class="fa fa-envelope-o" aria-hidden="true"></span>
+        </div>
+        <div class="modal_body_left modal_body_left1">
+          <h3 class="agileinfo_sign">Sign Up</h3>
+          <p>
+            Come join the 123Film! Let's set up your Account.
+          </p>
+          <form #formDangKy="ngForm" (ngSubmit)="DangKy(formDangKy.value)">
+
+            <div class="form-row mb-4">
+              <div class="col">
+                <!-- First name -->
+                <input type="text" [attr.id]="defaultRegisterFormFirstName" name="HoTen" class="HoTen form-control"
+                  placeholder="First name" style="padding-left: 10px;" ngModel required #hoten="ngModel" [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ"
+                  + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'>
+                <div *ngIf="hoten.errors && (hoten.touched || hoten.dirty)">
+                  <div class="alert alert-danger" *ngIf="hoten.errors">
+                    Please enter your FirstName!
+                  </div>
+                  <div *ngIf="hoten.errors.pattern" class="alert alert-danger">
+                    Please enter a valid format name!
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <!-- Last name -->
+                <input type="text" [attr.id]="defaultRegisterFormLastName" name="HoTen" class="HoTen form-control"
+                  placeholder="Last name" style="padding-left: 10px;" #lastten="ngModel" ngModel required [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ"
+                  + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'>
+                <div *ngIf="lastten.errors && (lastten.touched || lastten.dirty)">
+                  <div class="alert alert-danger" *ngIf="lastten.errors">
+                    Please enter your LastName!
+                  </div>
+                  <div *ngIf="lastten.errors.pattern" class="alert alert-danger">
+                    Please enter a valid format name!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- E-mail -->
+            <input type="text" [attr.id]="defaultRegisterFormUsername" name="TaiKhoan" class="Account form-control mb-4"
+              placeholder="Username" style="padding-left: 10px;" #taikhoan="ngModel" ngModel required [pattern]='"^[a-z0-9_-]{3,16}$"'>
+            <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
+              <div *ngIf="taikhoan.errors" class="alert alert-danger">
+                Please enter your account!
+              </div>
+              <div *ngIf="taikhoan.errors.pattern" class="alert alert-danger">
+                Wrong account format!
+              </div>
+            </div>
+
+            <input type="password" [attr.id]="defaultRegisterFormPassword" name="MatKhau" class="Password form-control"
+              placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" style="padding-left: 10px;"
+              ngModel required #matkhau="ngModel">
+              <!-- [pattern]='"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"'
+              minlength="10" maxlength="20" -->
+            <!-- <div *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty)">
+              <div *ngIf="matkhau.errors" class="alert alert-danger">
+                Please enter your password!
+              </div>
+              <div *ngIf="matkhau.errors.pattern" class="alert alert-danger">
+                Invalid Password!
+              </div>
+              <div class="alert alert-danger" *ngIf="matkhau.errors.minlength || matkhau.errors.maxlength">
+                Passwords must be between 10 and 20 characters!
+              </div>
+            </div> -->
+            <small [attr.id]="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+              At least 8 characters and 1 digit
+            </small>
+
+            <!-- Password -->
+            <!-- <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                      <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                          At least 8 characters and 1 digit
+                                      </small> -->
+            <input type="email" [attr.id]="defaultRegisterFormEmail" name="Email" class="Email form-control mb-4"
+              placeholder="E-mail" style="padding-left: 10px;" ngModel required #email="ngModel" [pattern]='"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"'>
+            <div *ngIf="email.errors && (email.touched || email.dirty)">
+              <div *ngIf="email.errors" class="alert alert-danger">
+                Please enter your email!
+              </div>
+              <div *ngIf="email.errors.pattern" class="alert alert-danger">
+                Invalid Email!
+              </div>
+            </div>
+
+            <!-- Phone number -->
+            <input type="number" [attr.id]="defaultRegisterPhonePassword" name="SoDT" class="phoneNumber form-control invalid"
+              placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" style="padding-left: 10px;"
+              ngModel required>
+            <small [attr.id]="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+              Optional - for two step authentication
+            </small>
+
+            <!-- Newsletter -->
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" [attr.id]="defaultRegisterFormNewsletter">
+              <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe
+                to
+                our
+                newsletter
+              </label>
+            </div>
+            <!-- Sign up button -->
+            <div class="modal-footer">
+              <button class="btn btn-info my-4 btn-block submit-regis dangky" [disabled]="formDangKy.invalid" type="submit"
+                ng-id="submit-regis">Sign
+                up</button>
+
+            </div>
+          </form>
+          <p>
+            <a href="#">By clicking register, I agree to your terms</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- //Modal content-->
+  </div>
+</div>
+<!-- //Modal2 -->
+<!-- //signup Model -->

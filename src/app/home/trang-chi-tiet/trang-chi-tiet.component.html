@@ -1,0 +1,648 @@
+<div class="row wow fadeInDown" ng-app="dayApp">
+  <div class="col-sm-12 block light" id="detailMain" style="background-color: rgb(255, 255, 255);">
+    <div id="detailMainTop" class="backgroundMain">
+      <div class="styleBlur">
+        <img class="posterLandscapeFilm" [src]="ChiTietPhim.HinhAnh" alt="error">
+      </div>
+      <div class="styleGradient" style="background: linear-gradient(to top, rgb(255, 255, 255), transparent 100%);"></div>
+      <div class="detailMainInfo mainMaxWidth2">
+        <div class="col-sm-3 col-xs-4 filmPosterTop">
+          <div class="row posterMain" style="height: 306.47px">
+            <img alt="Loading..." [src]="ChiTietPhim.HinhAnh">
+            <button class="playTrailerDetail showHover js-modal-btn" [attr.data-video-id]="TrailerPhim">
+              <img src="../../assets/img/play-video.png" alt="error">
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-5 infoMain">
+          <div>
+            <span class="detailMainInfo1">{{ChiTietPhim.NgayKhoiChieu | date:'dd.MM.yyyy'}}</span>
+            <br>
+          </div>
+          <div class="parentInfo2">
+            <span class="detailMainInfo2">
+              <!-- ngIf: filmDetail.film_age >= 13 -->
+              <span class="name-film">{{ChiTietPhim.TenPhim}}</span>
+            </span>
+          </div>
+          <div *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+            <span class="detailMainInfo1">{{lichChieu.ThoiLuong}}p - 6.3 IMDb - 2D/Digital/3D</span><br>
+          </div>
+          <button class="btnBuyTicketDetail">Buy Ticket</button>
+        </div>
+        <div class="col-sm-2 circleStar">
+          <div class="circleSum">
+          </div>
+          <div id="circlePercent" class="c100 p74">
+            <div class="circleBorder">
+            </div>
+            <span class="danh-gia">7.4</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+          <div id="starMain" class="row star" style="margin-top: 10px; width: 25px; display: inline;">
+            <img class="smallStar" src="../../../assets/img/star1.png" alt="error">
+            <img class="smallStar" src="../../../assets/img/star1.png" alt="error">
+            <img class="smallStar" src="../../../assets/img/star1.png" alt="error">
+            <img class="half" src="../../../assets/img/star1.2.png" alt="error">
+            <div class="row" style="margin-top: 10px;">
+              <span class="detailMainInfo1" style="margin: auto">57 People rates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mainMaxWidth2 contentMain">
+      <div class="detailMainInfoMobile mainMaxWidth2">
+        <div class="row">
+          <div class="col-sm-12 infoMain">
+            <div>
+              <span class="detailMainInfo1 ">{{ChiTietPhim.NgayKhoiChieu | date:'dd.MM.yyyy'}}</span><br>
+            </div>
+            <div>
+              <span class="detailMainInfo2 ">{{ChiTietPhim.TenPhim}}</span><br>
+            </div>
+            <div *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+              <span class="detailMainInfo1">{{lichChieu.ThoiLuong}}p - 6.3 IMDb - 2D/Digital/3D</span><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="nav nav-pills navCenter">
+        <li class="nav-item" style="margin-right: 5px;">
+          <a class="nav-link active" data-toggle="pill" href="#home">Showtimes</a>
+        </li>
+        <li class="nav-item" style="margin-left: 5px;">
+          <a class="nav-link" data-toggle="pill" href="#Infor">Information</a>
+        </li>
+        <li class="nav-item" style="margin-left: 5px;">
+          <a class="nav-link" data-toggle="pill" href="#Review">Review</a>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane container fade active show" id="home">
+          <div class="col-xs-12 block mainMaxWidth2" id="detailCinemaComplex">
+            <ul class="nav nav-tabs listPCinemas flex-column" aria-orientation="vertical" id="myTab" role="tablist">
+              <li class="nav-item listPCinemas">
+                <a class="nav-link active tabcinema" id="BHD-tab" data-toggle="tab" href="#BHD" role="tab"
+                  aria-controls="BHD" aria-selected="true">
+                  <img src="../../../assets/img/bhd.png" alt="error">
+                  <p>BHD Star Cineplex</p>
+                </a>
+              </li>
+              <li class="nav-item listPCinemas">
+                <a class="nav-link tabcinema" id="Galaxy-tab" data-toggle="tab" href="#Galaxy" role="tab" aria-controls="Galaxy"
+                  aria-selected="false">
+                  <img src="../../../assets/img/e520781386bd5436e94d6e15e193a005.png" alt="error">
+                  <p>Galaxy Cinema</p>
+                </a>
+              </li>
+              <li class="nav-item listPCinemas">
+                <a class="nav-link tabcinema" id="Lotte-tab" data-toggle="tab" href="#Lotte" role="tab" aria-controls="Lotte"
+                  aria-selected="false">
+                  <img src="../../../assets/img/404b8c4b80d77732e7426cdb7e24be20.png" alt="error">
+                  <p>Lotte Cinema</p>
+                </a>
+              </li>
+              <li class="nav-item listPCinemas">
+                <a class="nav-link tabcinema" id="CineStar-tab" data-toggle="tab" href="#CineStar" role="tab"
+                  aria-controls="CineStar" aria-selected="true">
+                  <img src="../../../assets/img/1721cfa98768f300c03792e25ceb0191.png" alt="error">
+                  <p>CineStar</p>
+                </a>
+              </li>
+              <li class="nav-item listPCinemas">
+                <a class="nav-link tabcinema" id="DDC-tab" data-toggle="tab" href="#DDC" role="tab" aria-controls="DDC"
+                  aria-selected="false">
+                  <img src="../../../assets/img/9b240f96a233bb43203ee514a21a6004.png" alt="error">
+                  <p>DDC - Đống Đa</p>
+                </a>
+              </li>
+              <li class="nav-item listPCinemas">
+                <a class="nav-link tabcinema" id="Mega-tab" data-toggle="tab" href="#Mega" role="tab" aria-controls="Mega"
+                  aria-selected="false">
+                  <img src="../../../assets/img/7b078639bd8fdb09dd83652d207c7b90.png" alt="error">
+                  <p>Mega GS</p>
+                </a>
+              </li>
+              <li class="nav-item listPCinemas">
+                <a class="nav-link tabcinema" id="CGV-tab" data-toggle="tab" href="#CGV" role="tab" aria-controls="CGV"
+                  aria-selected="false">
+                  <img src="../../../assets/img/ee621ee05dcd4565caead4f29421b41e.png" alt="error">
+                  <p>CGV Cinemas</p>
+                </a>
+              </li>
+              <li class="nav-item listPCinemas">
+                <a class="nav-link tabcinema" id="Other-tab" data-toggle="tab" href="#Other" role="tab" aria-controls="Other"
+                  aria-selected="false">
+                  <img src="../../../assets/img/05db7612f4a6f0ee3db35b63528f3473.png" alt="error">
+                  <p>Other Cinemas</p>
+                </a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content blockSession" id="myTabContent">
+              <div class="row wrapMovie DayOfWeek">
+                <div class="selectDate active" *ngFor="let day of weekDays" [ngClass]="{'active': day === selectedDate}">
+                    <!-- [ngClass]="{'active': day === selectedDate}" -->
+                  <div>
+                    <!-- <p class="day" (click)="chooseDate(date.day)">{{dateNow.day | date:'EEEE'}}</p>
+                          <p class="date" (click)="chooseDate(date.day)">{{dateNow.day | date: 'dd'}}</p> -->
+                    <p class="day" (click)="TodoCtrl(day)">{{day | amDateFormat:'dddd'}}</p>
+                    <p class="date" (click)="TodoCtrl(day)">{{day | amDateFormat:'DD'}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade show active float-left blockContent " id="BHD" role="tabpanel" aria-labelledby="BHD-tab"
+                style="width: 100%; height: 676px;">
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/bhd-star-pham-hung-15379533093101.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">BHD Star Cineplex</span>
+                          - Phạm Hùng
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L4-Satra Phạm Hùng, C6/27 Phạm Hùng, Bình Chánh</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                        <!-- [queryParams]="MaLichChieu:lichChieu.MaLichChieu" -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/bhd-star-vincom-le-van-viet-15379553262189.jpg" class="movieImage"
+                      alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">BHD Star Cineplex</span>
+                          - Vincom Lê Văn Việt
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L4-Vincom Plaza, 50 Lê Văn Việt, Q.9</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 1 : 2">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade float-left blockContent" id="Galaxy" role="tabpanel" aria-labelledby="Galaxy-tab"
+                style="width: 100%; height: 676px;">
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/galaxy-nguyen-du-15379626329832.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">GLX</span>
+                          - Nguyễn Du
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">116 Nguyễn Du, Q.1</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/galaxy-kinh-duong-vuong-15381065563489.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">GLX</span>
+                          - Kinh Dương Vương
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">718bis Kinh Dương Vương, Q.6</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 1 : 2">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/galaxy-quang-trung-15381040745219.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">GLX</span>
+                          - Quang Trung
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L3-Co.opmart Foodcosa, 304A Quang Trung, Gò Vấp</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 2 : 3">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/galaxy-trung-chanh-15381048160387.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">GLX</span>
+                          - Trung Chánh
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">TTVH Q12 – 09, Q L 22, Trung Mỹ Tây , Q.12</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 3 : 4">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/galaxy-pham-van-chi-15381059548289.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">GLX</span>
+                          - Phạm Văn Chí
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">Lầu 5, TTTM Platinum Plaza, 634 Phạm Văn Chí, Q.6</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 4 : 5">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/galaxy-huynh-tan-phat-15381070102598.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">GLX</span>
+                          - Huỳnh Tấn Phát
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">1362 Huỳnh Tấn Phát, KP1, Phú Mỹ, Q. 7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 5 : 6">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/galaxy-nguyen-van-qua-15381052937743.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">GLX</span>
+                          - Nguyễn Văn Quá
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">119B Nguyễn Văn Quá, Đông Hưng Thuận, Q.12, TPHCM</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 6 : 7">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade float-left blockContent" id="Lotte" role="tabpanel" aria-labelledby="Lotte-tab"
+                style="width: 100%; height: 676px;">
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/lotte-cinema-nam-sai-gon-15383867312967.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">Lotte</span>
+                          - Nam Sài Gòn
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L3-Lotte Mart NSG, 469 Nguyễn Hữu Thọ, Q.7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/lotte-cinema-cong-hoa-15383860949090.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">Lotte</span>
+                          - Cộng Hòa
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L4-Pico Plaza, 20 Cộng Hòa, Tân Bình</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 1 : 2">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/lotte-cinema-cantavil-15383866510260.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">Lotte</span>
+                          - Cantavil
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L7-Cantavil Premier, Xa Lộ Hà Nội, Q.2</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 2 : 3">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/lotte-cinema-phu-tho-15383865322515.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">Lotte</span>
+                          - Phú Thọ
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L4-Lotte Mart Phú Thọ, Q.11</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 3 : 4">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/lotte-cinema-nowzone-15383875427169.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">Lotte</span>
+                          - Nowzone
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">L5-Nowzone, 235 Nguyễn Văn Cừ, Q.1</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 4 : 7">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade float-left blockContent" id="CineStar" role="tabpanel" aria-labelledby="CineStar-tab"
+                style="width: 100%; height: 676px;">
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/cinestar-quoc-thanh-15379636956745.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">CNS</span>
+                          - Quốc Thanh
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">271 Nguyễn Trãi, Q.1</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 0 : 1">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapMovie panel">
+                  <div class="movieInfo">
+                    <img src="../../../assets/img/cinestar-hai-ba-trung-15383833704033.jpg" class="movieImage" alt="error">
+                    <div class="wrapInfo">
+                      <div class="headInfo">
+                        <span class="cinemaType">
+                          <span class="colorCinema BHD Star Cineplex">CNS</span>
+                          - Hai Bà Trưng
+                        </span>
+                      </div>
+                      <p class="movieAddInfo">
+                        <span class="left">135 Hai Bà Trưng, Bến Nghé, Q.1</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="movieSessions collapse in">
+                    <div class="listTypeTime">
+                      <img src="../../../assets/img/2_1.png" class="versionIcon" alt="error">
+                      <div class="sessions" *ngFor="let lichChieu of ChiTietPhim.LichChieu | slice: 1 : 2">
+                        <a [routerLink]="['/trang-dat-ve']" [queryParams]="{MaLichChieu:lichChieu.MaLichChieu, TenPhim: ChiTietPhim.TenPhim, MaPhim: ChiTietPhim.MaPhim}" class="session">{{lichChieu.NgayChieuGioChieu | date:'hh:mm'}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade float-left blockContent" id="DDC" role="tabpanel" aria-labelledby="DDC-tab"
+                style="width: 100%; height: 676px;">
+                <div class="emptySession">
+                  <p style="text-align:center;margin-top:20px">No showtimes</p>
+                </div>
+              </div>
+              <div class="tab-pane fade float-left blockContent" id="Mega" role="tabpanel" aria-labelledby="Mega-tab"
+                style="width: 100%; height: 676px;">
+                <div class="emptySession">
+                  <p style="text-align:center;margin-top:20px">No showtimes</p>
+                </div>
+              </div>
+              <div class="tab-pane fade float-left blockContent" id="CGV" role="tabpanel" aria-labelledby="CGV-tab"
+                style="width: 100%; height: 676px;">
+                <div class="emptySession">
+                  <p style="text-align:center;margin-top:20px">No showtimes</p>
+                </div>
+              </div>
+              <div class="tab-pane fade float-left blockContent" id="Other" role="tabpanel" aria-labelledby="Other-tab"
+                style="width: 100%; height: 676px;">
+                <div class="emptySession">
+                  <p style="text-align:center;margin-top:20px">No showtimes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="Infor">
+          <div id="homeNewsMain">
+            <div class="row isFlex detailMainStyle">
+              <div class="col-sm-6 col-xs-12 film left">
+                <div class="row rowLeftInfo">
+                  <p class="contentTitle">Release date</p>
+                  <p class="contentInfo">{{ChiTietPhim.NgayKhoiChieu | date:'dd.MM.yyyy'}}</p>
+                </div>
+                <div class="row rowLeftInfo">
+                  <p class="contentTitle">Directors</p>
+                  <p class="contentInfo"> Peter Candeland, Yarrow Cheney </p>
+                </div>
+                <div class="row rowLeftInfo">
+                  <p class="contentTitle">Actor</p>
+                  <p class="contentInfo">Benedict Cumberbatch</p>
+                </div>
+                <div class="row rowLeftInfo">
+                  <p class="contentTitle">Movie genre</p>
+                  <p class="contentInfo">Animation, Humor, Horror, Romance, Action movie</p>
+                </div>
+                <div class="row rowLeftInfo">
+                  <p class="contentTitle">Format</p>
+                  <p class="contentInfo">2D/Digital/3D</p>
+                </div>
+                <div class="row rowLeftInfo">
+                  <p class="contentTitle">National Production</p>
+                  <p class="contentInfo">USA</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-12 film right">
+                <div class="row rowLeftInfo">
+                  <p class="contentTitle">Content</p>
+                </div>
+                <div class="row rowLeftInfo">
+                  <p class="contentInfoFull description">{{ChiTietPhim.MoTa}}</p>
+                </div>
+                <div class="row rowLeftInfo">
+                  <p class="contentInfoFull"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="Review">
+          <div id="detailReviewer">
+            <div class="row isFlex detailMainStyle">
+              <div class="col-sm-12 col-xs-12 dadInputReviewer newDesign">
+                <span class="imgReviewer">
+                  <img src="../../../assets/img/avatar.png" alt="error">
+                </span>
+                <input class="inputReviwer" type="text" placeholder="
+                What do you think about this movie?"
+                  readonly="readonly">
+                <span class="imgReviewerStar">
+                  <img src="../../../assets/img/listStar.png">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

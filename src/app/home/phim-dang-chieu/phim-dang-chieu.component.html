@@ -1,0 +1,10 @@
+<!-- Swiper -->
+<div class="swiper-container px-lg-4 px-3">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let phim of DanhSachPhim, let i = index">
+      <app-item-phim [phimInput]="phim">{{i}}</app-item-phim>
+    </div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>

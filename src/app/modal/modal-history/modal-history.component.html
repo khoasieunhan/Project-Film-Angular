@@ -1,0 +1,63 @@
+<!-- Modal History -->
+<div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-notify modal-info" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 font-weight-bold" id="exampleModalLabel">{{Title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+          <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Data Table Example</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Chair Code</th>
+                      <th>Set Date</th>
+                      <th>Ticket Price</th>
+                      <th>Movie's Name</th>
+                      <th>Theaters</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Chair Code</th>
+                      <th>Set Date</th>
+                      <th>Ticket Price</th>
+                      <th>Movie's Name</th>
+                      <th>Theaters</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr *ngFor="let hisTory of hisToryTicket">
+                      <td>{{hisTory.MaGhe}}</td>
+                      <td>{{hisTory.NgayDat | date: 'dd.MM.yyyy, h:mm:ss a'}}</td>
+                      <td>{{hisTory.GiaVe | number}}</td>
+                      <td>{{hisTory.TenPhim}}</td>
+                      <td>{{hisTory.Rap}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close<i class="far fa-gem ml-1 text-white"></i></button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

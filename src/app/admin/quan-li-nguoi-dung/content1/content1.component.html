@@ -1,0 +1,131 @@
+<div id="content-wrapper">
+
+  <div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active">User Managerment</li>
+    </ol>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+      <div class="card-header" style="line-height: 60px;">
+        <i class="fas fa-table"></i>
+        Data Table Example
+        <div class="addButton" id="addButton" style="float: right">
+          <button class="addUser btn btn-outline-info btn-rounded" type="button" id="addUser" (click)="buttonAdd(ngDung)"
+            data-toggle="modal" data-target="#modalSubscriptionForm">
+            <i class="fas fa-user-plus" style="margin-right: 10px;"></i>Add User</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Account</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Group Code</th>
+                <th>User Type Code</th>
+                <th>Function</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Account</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Group Code</th>
+                <th>User Type Code</th>
+                <th>Function</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr *ngFor="let ngDung of layDanhSachNguoiDung">
+                <td>
+                  <input type="checkbox" name="TaiKhoan" ngModel (change)="checkbox(ngDung)" [checked]="ngDung.TaiKhoan">
+                </td>
+                <!-- [(ngModel)]="ngDung.TaiKhoan" -->
+                <td>{{ngDung.HoTen}}</td>
+                <td>{{ngDung.TaiKhoan}}</td>
+                <td>{{ngDung.MatKhau}}</td>
+                <td>{{ngDung.Email}}</td>
+                <td>{{ngDung.SoDT}}</td>
+                <td>{{ngDung.MaNhom}}</td>
+                <td>{{ngDung.MaLoaiNguoiDung}}</td>
+                <td style="text-align: center;">
+                  <button class="buttonHistory" (click)="buttonHistory(ngDung)" type="button" data-toggle="modal"
+                    data-target="#centralModalInfo">
+                    <span class="fas fa-history" style="color: cornflowerblue;"></span>
+                  </button>
+                  |
+                  <button class="buttonEdit" (click)="buttonEdit(ngDung)" type="button" data-toggle="modal" data-target="#modalRegisterForm">
+                    <span class="fa fa-pencil-square-o"></span>
+                  </button>
+                  |
+                  <button class="buttonRemove" type="button" (click)="XoaNgDung()">
+                    <span class="fas fa-trash"></span>
+                  </button>
+                </td>
+              </tr>
+              <tr *ngFor="let ngDung of layDanhSachNguoiDungGB2">
+                <td>
+                  <input type="checkbox" name="TaiKhoan" ngModel (change)="checkbox(ngDung)" [checked]="ngDung.TaiKhoan">
+                </td>
+                <!-- [(ngModel)]="ngDung.TaiKhoan" -->
+                <td>{{ngDung.HoTen}}</td>
+                <td>{{ngDung.TaiKhoan}}</td>
+                <td>{{ngDung.MatKhau}}</td>
+                <td>{{ngDung.Email}}</td>
+                <td>{{ngDung.SoDT}}</td>
+                <td>{{ngDung.MaNhom}}</td>
+                <td>{{ngDung.MaLoaiNguoiDung}}</td>
+                <td style="text-align: center;">
+                  <button class="buttonHistory" (click)="buttonHistory(ngDung)" type="button" data-toggle="modal"
+                    data-target="#centralModalInfo">
+                    <span class="fas fa-history" style="color: cornflowerblue;"></span>
+                  </button>
+                  |
+                  <button class="buttonEdit" (click)="buttonEdit(ngDung)" type="button" data-toggle="modal" data-target="#modalRegisterForm">
+                    <span class="fa fa-pencil-square-o"></span>
+                  </button>
+                  |
+                  <button class="buttonRemove" type="button" (click)="XoaNgDung()">
+                    <span class="fas fa-trash"></span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+    <p class="small text-center text-muted my-5">
+      <em>More table examples coming soon...</em>
+    </p>
+
+  </div>
+  <!-- /.container-fluid -->
+
+  <!-- Sticky Footer -->
+  <footer class="sticky-footer">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright © Your Website 2018</span>
+      </div>
+    </div>
+  </footer>
+
+</div>

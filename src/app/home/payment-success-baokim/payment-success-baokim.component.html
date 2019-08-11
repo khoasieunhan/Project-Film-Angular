@@ -1,0 +1,78 @@
+<!-- <app-header></app-header> -->
+<div class="container-fluid" style="background-color: #eee; padding-top: 5em;" id="myTableIdElementId"
+  #myTableIdElementId>
+  <div class="title-payment-info">
+    <div class="title-infor">
+      <span class="thanks-info">
+        Thank you for booking movie tickets at 123Film
+      </span>
+      <p class="bookingNow" style="padding: 0 0 10px 0;">Booking No: {{orderCode}}</p>
+    </div>
+    <div class="title-payment-img">
+      <img src="../../../assets/img/584bf0c8a62aaa830c43edb4.png" alt="error" class="img-code img-fluid">
+      <h3 class="nameFilm">Please check your mail payment success.</h3>
+    </div>
+  </div>
+  <!-- <div class="info-ticket-payment">
+    <div class="row">
+      <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 info-ticket">
+        <div class="info-ticket-human">
+          <div class="info-ticket-human-2">
+            <div class="info-ticket-human-3" style="float: left; width: 15em; padding-bottom: 15px;">
+              <h4 class="title-ticket">Ticket Information</h4>
+              <p>Ticket Code:
+                <span style="color: red;">#{{ticketCode}}</span>
+              </p>
+
+              <div style="padding: 0 0 10px 0; transition: all 0.5s; color: #666666;">
+                <span>Seat Location:</span>
+                <div class="hoverSpan" style="float: right;">
+                  <span *ngFor="let ghe of getDanhSachVe; let isLast=last">{{ghe.TenGhe}}{{item}}{{isLast ? '' : ', '}}</span>
+                </div>
+              </div>
+
+              <p>Showtimes:
+                <span *ngFor="let ctPhim of getLichChieu | slice:0 : 1">{{ctPhim.NgayChieuGioChieu | date:'dd/MM/yyyy
+                  hh:mm'}}</span>
+              </p>
+              <p>Cinema Room:
+                <span *ngFor="let ctPhim of getLichChieu | slice:0 : 1">{{ctPhim.Rap.TenRap}}</span>
+              </p>
+              <p>Full Name:
+                <span>{{nguoiDung.HoTen}}</span>
+              </p>
+              <p>Email:
+                <span>{{nguoiDung.Email}}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 info-payment">
+        <div class="info-payment-human">
+          <div class="info-payment-human-2">
+            <div class="info-payment-human-3" style="float: left;">
+              <h4 class="title-payment">Billing Information</h4>
+              <p>Payment methods:
+                <span style="color:#3495cb; text-transform: uppercase;">Online</span>
+              </p>
+              <p>Total Money:
+                <span>{{total | number}}vnd</span>
+              </p>
+              <p>Ticket Times:
+                <span>{{today | date: 'mediumTime'}}</span>
+              </p>
+              <div class="button-export" style="display: flex;">
+                <button class="btn btn-outline-blue" type="button" (click)="exportPDF()">Export Bill PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+<!-- <router-outlet></router-outlet> -->
+
+<app-footer></app-footer>

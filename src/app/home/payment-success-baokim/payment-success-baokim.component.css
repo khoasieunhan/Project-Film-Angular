@@ -1,0 +1,86 @@
+p {
+  font-size: 15px;
+  font-family: 'SF Text Regular' !important;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'SF Text Regular' !important;
+  overflow-x: hidden;
+}
+
+.title-payment-img {
+  text-align: center;
+}
+
+.title-payment-img .img-code {
+  width: 300px;
+}
+
+.title-payment-img .nameFilm {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.title-payment-info .title-infor {
+  text-align: center;
+  font-weight: bold;
+}
+
+.info-ticket-human,
+.info-payment-human {
+  font-weight: bold;
+}
+
+.info-ticket-human .info-ticket-human-2,
+.info-payment-human .info-payment-human-2 {
+  width: 15em;
+  height: 12em;
+  margin: 0 auto;
+  transition: all 0.5s;
+}
+
+.info-ticket-human .info-ticket-human-3,
+.info-payment-human .info-payment-human-3 {
+  font-size: 14px;
+  font-family: 'SF Text Regular' !important;
+  transition: all 0.5s;
+}
+
+.info-ticket-human .info-ticket-human-3 p,
+.info-payment-human .info-payment-human-3 p {
+  padding: 0 0 10px 0;
+  transition: all 0.5s;
+}
+
+.info-ticket-human .info-ticket-human-3 h4,
+.info-payment-human .info-payment-human-3 h4 {
+  padding-bottom: 10px;
+  transition: all 0.5s;
+}
+
+.info-ticket-human .info-ticket-human-3 p>span,
+.info-payment-human .info-payment-human-3 p>span {
+  float: right;
+  color: #949494;
+}
+
+.info-ticket-human .info-ticket-human-3 p>span:hover,
+.info-payment-human .info-payment-human-3 p>span:hover {
+  color: #f64;
+  transition: all 0.5s;
+}
+
+.info-ticket-human .info-ticket-human-3 .hoverSpan:hover {
+  color: #f64;
+  transition: all 0.5s;
+}
+
+.info-ticket-payment {
+  padding-top: 2em;
+  transition: all 0.5s;
+}
+
+.btn {
+  font-size: smaller;
+}

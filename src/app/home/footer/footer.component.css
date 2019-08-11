@@ -1,0 +1,121 @@
+a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+#footer {
+    background-color: #222;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #949494;
+}
+
+.block {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.mainMaxWidth {
+    max-width: 940px;
+    float: none;
+    margin: auto;
+    clear: both;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#footer .title {
+    color: #fff;
+    font-size: 80%;
+}
+
+#footer .noPaddingLeft {
+    padding-left: 0;
+}
+
+#footer .fontSizeP a {
+    font-size: 12px!important;
+    font-size: 80%;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #949494;
+    display: block;
+    transition: all .2s;
+    line-height: 2.3;
+}
+
+#footer .title {
+    color: #fff;
+    font-size: 80%;
+}
+
+#footer .linePartner {
+    margin-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#footer .iconConnect {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+}
+
+#footer .textCenter {
+    text-align: center;
+}
+
+#footer .iconApp {
+    background: 0 0;
+    height: 30px;
+    width: auto;
+    margin: 5px;
+}
+
+#footer .hrFooter {
+    border-top: 1px solid #4a4a4a;
+}
+
+#footer .imgFooter {
+    text-align: center;
+    padding: 0;
+}
+
+#footer .infoFooter {
+    color: #fff;
+    white-space: nowrap;
+    font-size: 70%;
+}
+
+#footer .infoFooter span:first-child {
+    color: #fff;
+}
+
+#footer .infoFooter span {
+    display: block;
+    line-height: 1.8;
+    color: #949494;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#footer .vngIcon {
+    width: 60px;
+    height: auto;
+}
+
+#footer .iconConnect:hover {
+    opacity: .7;
+    transition: all 0.5s;
+}
+
+#footer .fontSizeP a:hover {
+    color: #fff;
+    transition: all 0.5s;
+}

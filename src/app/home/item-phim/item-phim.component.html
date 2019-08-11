@@ -1,0 +1,71 @@
+<div class="product-course-img film">
+  <div class="product-course-info">
+    <div class="product-thumb-course">
+      <img [src]="phimInput.HinhAnh" alt="error" class="img-fluid">
+      <div class="pro-info-course">
+        <div class="inner-pro-course hoverInfor showHover">
+          <button #phimTrailer type="button" class="link-pro-course playTrailer video-btn" data-toggle="modal"
+            [attr.data-src]="TrailerPhim" data-target="#myModalz" (click)="getEmbed(phimInput.Trailer)">
+            <img src="../../assets/img/play-video.png" alt="error">
+          </button>
+        </div>
+      </div>
+      <span class="product-new-top">New</span>
+    </div>
+    <div class="item-info-product">
+      <div class="info-product-price">
+        <div class="grid_meta">
+          <div class="product_price info-phim">
+            <h4>
+              <div class="name-phim hideHover">{{phimInput.TenPhim}}</div>
+            </h4>
+            <div class="showHover">
+              <a [routerLink]="['/trang-chi-tiet']" [queryParams]="{MaPhim:phimInput.MaPhim, TenPhim:phimInput.TenPhim}"
+                class="buyNow showingDetail">Buy
+                Ticket</a>
+            </div>
+          </div>
+          <ul class="stars">
+            <li>
+              <a href="#">
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="googles single-item hvr-outline-out">
+          <form action="#" method="post">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="add" value="1">
+            <input type="hidden" name="googles_item" value="Farenheit">
+            <input type="hidden" name="amount" value="575.00">
+            <button type="submit" class="googles-cart googles-cart">
+              <i class="fa fa-cart-plus"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

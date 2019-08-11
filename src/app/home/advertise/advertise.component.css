@@ -1,0 +1,36 @@
+img {
+  width: 100% !important;
+}
+
+.grayBack {
+  position: relative;
+}
+
+#homeNews {
+  background: url(../../assets/img/back-news.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 120px;
+  width: 100%;
+}
+
+.mainMaxWidth {
+  max-width: 940px;
+  float: none;
+  margin: auto;
+  clear: both;
+}
+
+.block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.banner-ads {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  cursor: pointer;
+}
